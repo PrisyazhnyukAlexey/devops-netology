@@ -1,4 +1,4 @@
-# netology
+# netology devops
 ## Alexey Prisyazhnyuk
 благодаря terraform/.gitignore будут проигнорированые следующие файлы:
 **.terraform/* - игнорировать из всех директориях все файлы которые находятся в директории .terraform
