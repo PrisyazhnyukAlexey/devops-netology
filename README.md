@@ -1,4 +1,4 @@
-# netology study 
-## Alexey Prisyazhnyuk 
+# netology study devops
+## Alexey Prisyazhnyuk
 test
 
