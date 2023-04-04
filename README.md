@@ -1,4 +1,4 @@
-# netology
-## Alexey Prisyazhnyuk
+# netology study 
+## Alexey Prisyazhnyuk 
 test
 
