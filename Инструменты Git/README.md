@@ -27,3 +27,6 @@ git log --pretty=format:"%h %ad | %aN | %s" --date=short v0.12.23..v0.12.24\
 
 ## 5 Вопрос
  git grep -p "func providerSource("
+## 6 Вопрос
+git grep -p "globalPluginDirs(" - ищем файл с функцией\
+git log -L :globalPluginDirs:plugins.go - ищем историю по файлу\
