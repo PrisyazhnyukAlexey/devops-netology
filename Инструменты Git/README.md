@@ -25,4 +25,5 @@ git log --pretty=format:"%h %ad | %aN | %s" --date=short v0.12.23..v0.12.24\
 > dd01a35078 Update CHANGELOG.md\
 > 225466bc3e Cleanup after v0.12.23 release\
 
-
+## 5 Вопрос
+ git grep -p "func providerSource("
