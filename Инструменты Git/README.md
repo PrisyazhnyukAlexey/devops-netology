@@ -23,6 +23,6 @@ b14b74c493 [Website] vmc provider links\
 d5f9411f51 command: Fix bug when using terraform login on Windows\
 4b6d06cc5d Update CHANGELOG.md\
 dd01a35078 Update CHANGELOG.md\
-225466bc3e Cleanup after v0.12.23 release\
+>225466bc3e Cleanup after v0.12.23 release\
 
 
