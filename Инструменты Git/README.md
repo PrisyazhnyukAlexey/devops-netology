@@ -12,7 +12,7 @@
 ## 4 вопрос (Перечислите хеши и комментарии всех коммитов, которые были сделаны между тегами v0.12.23 и v0.12.24.)
     git log --pretty=format:"%h %s" v0.12.23..v0.12.24\
 или\
-    git log --pretty=format:"%h %ad | %aN | %s" --date=short v0.12.23..v0.12.24\
+     git log --pretty=format:"%h %ad | %aN | %s" --date=short v0.12.23..v0.12.24\
 
 > 33ff1c03bb v0.12.24\
 > b14b74c493 [Website] vmc provider links\
