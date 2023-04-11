@@ -14,7 +14,7 @@ git log --pretty=format:"%h %s" v0.12.23..v0.12.24\
 или\
 git log --pretty=format:"%h %ad | %aN | %s" --date=short v0.12.23..v0.12.24\
 
-33ff1c03bb v0.12.24\
+>33ff1c03bb v0.12.24\
 b14b74c493 [Website] vmc provider links\
 3f235065b9 Update CHANGELOG.md\
 6ae64e247b registry: Fix panic when server is unreachable\
