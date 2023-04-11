@@ -30,3 +30,5 @@ git log --pretty=format:"%h %ad | %aN | %s" --date=short v0.12.23..v0.12.24\
 ## 6 Вопрос
 git grep -p "globalPluginDirs(" - ищем файл с функцией\
 git log -L :globalPluginDirs:plugins.go - ищем историю по файлу\
+## 7 Вопрос (Кто автор функции synchronizedWriters)
+git log -S "func synchronizedWriters(" --pretty=format:"%h %an %ad %s" \
