@@ -10,9 +10,9 @@
     parent 9ea88f22fc6269854151c571162c5bcf958bee2b\
 
 ## 4 вопрос (Перечислите хеши и комментарии всех коммитов, которые были сделаны между тегами v0.12.23 и v0.12.24.)
-git log --pretty=format:"%h %s" v0.12.23..v0.12.24\
+    git log --pretty=format:"%h %s" v0.12.23..v0.12.24\
 или\
-git log --pretty=format:"%h %ad | %aN | %s" --date=short v0.12.23..v0.12.24\
+    git log --pretty=format:"%h %ad | %aN | %s" --date=short v0.12.23..v0.12.24\
 
 > 33ff1c03bb v0.12.24\
 > b14b74c493 [Website] vmc provider links\
@@ -26,9 +26,9 @@ git log --pretty=format:"%h %ad | %aN | %s" --date=short v0.12.23..v0.12.24\
 > 225466bc3e Cleanup after v0.12.23 release\
 
 ## 5 Вопрос(Найдите коммит, в котором была создана функция func providerSource, её определение в коде выглядит так: func providerSource(...) (вместо троеточия перечислены аргументы).)
- git grep -p "func providerSource("
+    git grep -p "func providerSource("
 ## 6 Вопрос (Найдите все коммиты, в которых была изменена функция globalPluginDirs)
-git grep -p "globalPluginDirs(" - ищем файл с функцией\
-git log -L :globalPluginDirs:plugins.go - ищем историю по файлу\
+    git grep -p "globalPluginDirs(" - ищем файл с функцией\
+    git log -L :globalPluginDirs:plugins.go - ищем историю по файлу\
 ## 7 Вопрос (Кто автор функции synchronizedWriters)
-git log -S "func synchronizedWriters(" --pretty=format:"%h %an %ad %s" \
+    git log -S "func synchronizedWriters(" --pretty=format:"%h %an %ad %s" \
