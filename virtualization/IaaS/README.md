@@ -34,6 +34,11 @@
 
 *Приложите вывод команд установленных версий каждой из программ, оформленный в Markdown.*
 
+- на Windows:
+- Virtualbox ![VirtualBox](img.png)
+- Vagrant ![img_1.png](img_1.png)
+- Terraform ![img_2.png](img_2.png)
+- Ansible ![img_3.png](img_3.png)
 ## Задача 4 
 
 Воспроизведите практическую часть лекции самостоятельно.
