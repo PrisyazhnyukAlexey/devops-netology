@@ -20,6 +20,7 @@ Hey, Netology
 ```
 
 Опубликуйте созданный fork в своём репозитории и предоставьте ответ в виде ссылки на https://hub.docker.com/username_repo.
+    https://hub.docker.com/layers/alexeyprisyazhnyuk/nginx_repo/v2/images/sha256-9477873a862bccab3376bc460611cf4e8de69a23558283ffdcc1b06657047839?tab=layers
 
 ## Задача 2
 
