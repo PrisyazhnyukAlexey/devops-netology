@@ -74,7 +74,19 @@ Java-приложение, MongoDB, Nodejs-приложение и мобиль�
 Воспроизведите практическую часть лекции самостоятельно.
 
 Соберите Docker-образ с Ansible, загрузите на Docker Hub и пришлите ссылку вместе с остальными ответами к задачам.
+```
+Установил образ используя следующую инструкцию в docerkfile:
+FROM ubuntu:latest
 
+RUN apt-get update && \
+    apt-get install -y software-properties-common && \
+    apt-add-repository --yes --update ppa:ansible/ansible && \
+    apt-get install -y ansible
+CMD [ "ansible-playbook", "--version" ]
+
+```
+Ссылка на образ
+https://hub.docker.com/r/alexeyprisyazhnyuk/ansible
 
 ---
 
