@@ -18,6 +18,9 @@
 
 Чтобы получить зачёт, вам нужно предоставить вывод команды terraform apply и страницы свойств, созданной ВМ из личного кабинета YandexCloud.
 
+![image](https://github.com/djohnii/devops-netology/assets/91311426/c69905b5-c1b7-4967-a460-baa8ce77c752)
+
+
 ## Задача 3
 
 С помощью Ansible и Docker Compose разверните на виртуальной машине из предыдущего задания систему мониторинга на основе Prometheus/Grafana.
