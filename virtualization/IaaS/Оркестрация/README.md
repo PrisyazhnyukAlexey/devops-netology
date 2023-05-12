@@ -41,9 +41,8 @@
 Чтобы получить зачёт, предоставьте: 
 
 - скриншот работающего веб-интерфейса Grafana с текущими метриками, как на примере ниже.
-<p align="center">
-  <img width="1200" height="600" src="./assets/yc_02.png">
-</p>
+![image](https://github.com/djohnii/devops-netology/assets/91311426/bf04fea2-e061-470e-a57b-5864fc8a5be2)
+
 
 ## Задача 5 (*)
 
