@@ -28,6 +28,8 @@ docker swarm global - запускает заданное количество �
 ```
 docker node ls
 ```
+![image](https://github.com/djohnii/devops-netology/assets/91311426/3d8dd223-825d-4bfa-8960-05819d12b14e)
+
 
 ## Задача 3
 
@@ -37,6 +39,7 @@ docker node ls
 ```
 docker service ls
 ```
+![image](https://github.com/djohnii/devops-netology/assets/91311426/51d3c6ee-e5fc-4e0c-b0fd-6ccdae8e053c)
 
 ## Задача 4 (*)
 
