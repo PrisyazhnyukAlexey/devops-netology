@@ -20,19 +20,19 @@ resource "random_password" "random_string" {
   min_numeric = 1
 }
 
-/*
-resource "docker_image" {
+
+resource "docker_image" { #указываем 2-ой лейбл
   name         = "nginx:latest"
   keep_locally = true
 }
 
-resource "docker_container" "1nginx" {
+resource "docker_container" "1nginx" { #убираем цифру вначале 2-го лейбла
   image = docker_image.nginx.image_id
-  name  = "example_${random_password.random_string_fake.resuld}"
+  name  = "example_${random_password.random_string_fake.resuld}"  # подставляем правильную переменную 'random_password.random_string.result'
 
   ports {
     internal = 80
     external = 8000
   }
 }
-*/
+
