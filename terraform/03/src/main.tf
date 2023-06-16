@@ -13,7 +13,7 @@ data "yandex_compute_image" "ubuntu" {
 
 resource "yandex_compute_instance" "web" {
   count = 2
-  name = "netology-count-web-${count.index}"
+  name = "netology-count-web-${count.index + 1}"
   platform_id = "standard-v1"
   resources {
     cores  = 2
