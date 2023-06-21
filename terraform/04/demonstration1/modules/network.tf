@@ -19,9 +19,3 @@ resource "yandex_vpc_subnet" "develop" {
   v4_cidr_blocks = ["10.0.1.0/24"]
 }
 
-output "network" {
-  value  =  yandex_vpc_network.develop.id
-}
-output "subnet" {
-  value = yandex_vpc_subnet.develop.*.id
-}
