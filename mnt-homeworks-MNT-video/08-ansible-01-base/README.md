@@ -1,4 +1,4 @@
-![image](https://github.com/djohnii/devops-netology/assets/91311426/b5efbff9-2cf0-4e0c-a143-dfe4726671d2)# Домашнее задание к занятию 1 «Введение в Ansible»
+# Домашнее задание к занятию 1 «Введение в Ansible»
 
 ## Подготовка к выполнению
 
