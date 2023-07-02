@@ -1,6 +1,6 @@
 ---
 - name: Install Vector
-  hosts: vector
+  hosts: all
   handlers:
     - name: Check succses install vector
       ansible.builtin.shell: "vector --version"
