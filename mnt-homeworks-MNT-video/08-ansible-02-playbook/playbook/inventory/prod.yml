@@ -2,4 +2,4 @@
 clickhouse:
   hosts:
     centos7:
-      ansible_connect: docker
+      ansible_connection: docker
