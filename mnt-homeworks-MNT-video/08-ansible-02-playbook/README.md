@@ -2,7 +2,7 @@
 
 playbook site.yml
 1. Установка Clickhouse
-  1.1 Скачивание  дистрибитува  clickhouse-server , clickhouse-client
+- Скачивание  дистрибитува  clickhouse-server , clickhouse-client
   2. скачивание дистрибутива clickhouse-common-static
   3. Установка
   4. Запуск сервиса clickhouse
