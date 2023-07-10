@@ -1,15 +1,16 @@
 sources:
   demo_logs:
-    type: demo_logs
-    format: syslog
+    type: {{ vector_type }}
+    format: {{ vector_format }}
 sinks:
   to_clickhouse:
-    type: clickhouse
+    type: {{ vector_sinks_type }}
     inputs:
-      - demo_logs
-    database: logs
-    endpoint: http://192.168.1.12:8123
-    table: vector_table
+      - {{ vector_sinks_inputs }}
+    database: {{ vector_sinks_database }}
+#    endpoint: http://192.168.1.12:8123
+    endpoint: {{ clickhouse_ip }}
+    table: {{ vector_sinks_table }}
     compression: gzip
     healthcheck: true
     skip_unknown_fields: true
