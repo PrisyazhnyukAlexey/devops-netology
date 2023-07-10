@@ -8,7 +8,7 @@ sinks:
     inputs:
       - demo_logs
     database: logs
-    endpoint: http://192.168.1.12:8123
+    endpoint: {{ clickhouse_ip }}
     table: vector_table
     compression: gzip
     healthcheck: true
