@@ -1,0 +1,24 @@
+---
+%{~ for p in webservers ~}
+
+clickhouse:
+  hosts:
+    ${p["name"]}:
+      ansible_host: ${p["network_interface"][0]["nat_ip_address"]}
+%{~ endfor ~}
+
+%{~ for p in vector ~}
+
+vector:
+  hosts:
+    ${p["name"]}:
+      ansible_host: ${p["network_interface"][0]["nat_ip_address"]}
+%{~ endfor ~}
+
+%{~ for p in lighthouse ~}
+
+lighthouse:
+  hosts:
+    ${p["name"]}:
+      ansible_host: ${p["network_interface"][0]["nat_ip_address"]}
+%{~ endfor ~}

@@ -1,0 +1,11 @@
+---
+
+vector_version: "0.27.0"
+
+clickhouse_ip: "http://192.168.1.12:8123"
+vector_type: "demo_logs"
+vector_format: "syslog"
+vector_sinks_type: "clickhouse"
+vector_sinks_inputs: "demo_logs"
+vector_sinks_database: "logs"
+vector_sinks_table: "vector_table"

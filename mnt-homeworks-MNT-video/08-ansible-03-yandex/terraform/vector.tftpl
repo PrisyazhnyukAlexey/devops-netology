@@ -1,0 +1,14 @@
+---
+
+vector_version: "0.27.0"
+
+%{~ for p in vector ~}
+clickhouse_ip: "http://${p["network_interface"][0]["nat_ip_address"]}:8123"
+%{~ endfor ~}
+
+vector_type: "demo_logs"
+vector_format: "syslog"
+vector_sinks_type: "clickhouse"
+vector_sinks_inputs: "demo_logs"
+vector_sinks_database: "logs"
+vector_sinks_table: "vector_table"

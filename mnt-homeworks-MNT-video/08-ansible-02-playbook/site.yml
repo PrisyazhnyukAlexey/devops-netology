@@ -37,7 +37,7 @@
       changed_when: create_db.rc == 0
 
 - name: Install Vector
-  hosts: vector
+  hosts: vector:vector-02
   handlers:
     - name: Start Vector service
       become: true
