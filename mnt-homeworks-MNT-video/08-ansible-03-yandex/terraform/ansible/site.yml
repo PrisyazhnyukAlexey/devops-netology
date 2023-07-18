@@ -1,6 +1,7 @@
 ---
 - name: Install Clickhouse
   hosts: clickhouse
+  tags: clickhouse
   handlers:
     - name: Start clickhouse service
       become: true
@@ -38,6 +39,7 @@
 
 - name: Install Vector
   hosts: vector
+  tags: vector
   handlers:
     - name: Start Vector service
       become: true
@@ -78,6 +80,7 @@
 
 - name: Install nginx
   hosts: lighthouse
+  tags: lighthouse
   handlers:
     - name: start-nginx
       become: true
@@ -107,6 +110,7 @@
 
 - name: Install Lighthouse
   hosts: lighthouse
+  tags: lighthouse
   handlers:
     - name: reload-nginx
       become: true

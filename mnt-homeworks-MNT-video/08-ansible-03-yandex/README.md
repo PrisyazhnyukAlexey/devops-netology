@@ -1,27 +1,76 @@
 # Домашнее задание к занятию 3 «Использование Ansible»
 
-## Подготовка к выполнению
+## Структура
 
-1. Подготовьте в Yandex Cloud три хоста: для `clickhouse`, для `vector` и для `lighthouse`.
-2. Репозиторий LightHouse находится [по ссылке](https://github.com/VKCOM/lighthouse).
+  Terraform Папка . В ней описан код для создания трех виртуальных машин в yandex cloud. \
+  Ansible в папке terraform. В ней описан код по установке и настроке vector,clickhouse,LightHouse 
 
-## Основная часть
+ # Terraform
 
-1. Допишите playbook: нужно сделать ещё один play, который устанавливает и настраивает LightHouse.
-2. При создании tasks рекомендую использовать модули: `get_url`, `template`, `yum`, `apt`.
-3. Tasks должны: скачать статику LightHouse, установить Nginx или любой другой веб-сервер, настроить его конфиг для открытия LightHouse, запустить веб-сервер.
-4. Подготовьте свой inventory-файл `prod.yml`.
-5. Запустите `ansible-lint site.yml` и исправьте ошибки, если они есть.
-6. Попробуйте запустить playbook на этом окружении с флагом `--check`.
-7. Запустите playbook на `prod.yml` окружении с флагом `--diff`. Убедитесь, что изменения на системе произведены.
-8. Повторно запустите playbook с флагом `--diff` и убедитесь, что playbook идемпотентен.
-9. Подготовьте README.md-файл по своему playbook. В нём должно быть описано: что делает playbook, какие у него есть параметры и теги.
-10. Готовый playbook выложите в свой репозиторий, поставьте тег `08-ansible-03-yandex` на фиксирующий коммит, в ответ предоставьте ссылку на него.
+ 1. создает сеть develop
+ 2. создает подсеть develop с адресом 10.0.1.0/24
+ 3. считывает образ для Centos-7
+ 4. создает 3 тачки с именем example , vector , lighthouse 
+ 5. передает ssh ключ для подключения ко всем тачкам
+ 6. создает файл hosts.yml из шаблона hosts.tftpl
+ 7. создает файл vector.yml из шаблона vector.tftpl
+ 8. запускает ansible playbook
 
----
+ файлы:
+ 
+ ```
+ centos.json
+ data.tf -  создание пользователя из шаблона linux.tpl и передача ключа ssh
+ hosts.tftpl - шаблон для создание инвентори файла для ansible playbook
+ lighthouse.tf - создание виртуальной машины lighthouse
+ linux.tpl - шаблон для создание пользователя 
+ locals.tf - локальные переменные (в данном случаи использовалось для тестов)
+ main.tf - создание сети, подсети, виртуальной машины Example(clickhouse), создание шаблона через local_file, запуск ansible-playbook 
+ variables.tf - переменные
+ vector.tf - создание виртуальной машины Vector
+ vector.tftpl - шаблон для создания конфиг-файла vector.yml
+ ```
+# Ansible
+плейбук находится в папке  terraform/ansible/* \
+Иерархия:
+- Ansible/
+    - site.yml
+    - group_vars/
+        - clickhouse
+            - clickhouse.yml
+        - vector
+            - vector.yml (появляется после применения terraform)
+        - lighthouse
+            - lighthouse.yml
+    - inventory/(for local testing)
+    - templates/
+        - lighthouse.conf.j2
+        - nginx.conf.j2
+        - vector.service.j2
+        - vector.yml.j2
 
-### Как оформить решение задания
+## Структура
+1. Install Clickhouse
+    - Handlers: Start clickhouse service
+    -  Task: Get clickhouse distrib
+    - Task: Install clickhouse packages
+    - Task: Create database
+2. Install Vector
+    - Handlers: Start Vector service
+    - Task:  Get vector distrib
+    - Task: Install vector packages
+    - Task: Create vector config file (vector.yml)
+    - Task: Vector systemd unit (vector.service)
+3. Install nginx
+    - Handlers: start-nginx
+    - Task: Install epel-release
+    - Task: Install nginx
+    - Task: Create general config (nginx.conf.j2)
+4. Install Lighthouse
+    - Handlers: reload-nginx
+    - Pre_tasks:  Install dependencies
+    - Task:  Copy from git
+    - Task:  Create lighthouse config (lighthouse.conf.j2)
 
-Выполненное домашнее задание пришлите в виде ссылки на .md-файл в вашем репозитории.
-
----
+# Ссылки
+https://github.com/djohnii/devops-netology/tree/main/mnt-homeworks-MNT-video/08-ansible-03-yandex/terraform
