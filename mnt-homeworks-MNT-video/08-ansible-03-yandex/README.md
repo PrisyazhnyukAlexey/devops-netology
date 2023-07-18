@@ -50,23 +50,23 @@
         - vector.yml.j2
 
 ## Структура
-1. Install Clickhouse
+1. Install Clickhouse (tag: Clickhouse)
     - Handlers: Start clickhouse service
     -  Task: Get clickhouse distrib
     - Task: Install clickhouse packages
     - Task: Create database
-2. Install Vector
+2. Install Vector ( tag: vector)
     - Handlers: Start Vector service
     - Task:  Get vector distrib
     - Task: Install vector packages
     - Task: Create vector config file (vector.yml)
     - Task: Vector systemd unit (vector.service)
-3. Install nginx
+3. Install nginx ( tag: nginx)
     - Handlers: start-nginx
     - Task: Install epel-release
     - Task: Install nginx
     - Task: Create general config (nginx.conf.j2)
-4. Install Lighthouse
+4. Install Lighthouse ( tag: Lighthouse )
     - Handlers: reload-nginx
     - Pre_tasks:  Install dependencies
     - Task:  Copy from git
