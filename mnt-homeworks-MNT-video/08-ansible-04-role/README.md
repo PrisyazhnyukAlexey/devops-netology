@@ -65,7 +65,7 @@ ansible-galaxy role init vector-role
 10. Выложите playbook в репозиторий.
 11. В ответе дайте ссылки на оба репозитория с roles и одну ссылку на репозиторий с playbook.
 
-[lighthouse](https://github.com/djohnii/ansible_lighthouse) /
+[lighthouse](https://github.com/djohnii/ansible_lighthouse) \
 [vector](https://github.com/djohnii/ansible_vector) \
 [playbook](https://github.com/djohnii/devops-netology/tree/main/mnt-homeworks-MNT-video/08-ansible-04-role/ansible)
 ---
