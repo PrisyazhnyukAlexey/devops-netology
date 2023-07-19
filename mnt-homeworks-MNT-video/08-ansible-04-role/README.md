@@ -40,11 +40,11 @@ ansible-galaxy role init vector-role
 ##  NGINX | Install epel-release
 Данный плей устанавливает epel-release
 
-## nginx | Install nginx
+## NGINX | Install nginx
 
 Данный плей устанавливает nginx и запускает его.
 
-##  nginx | Create general config
+##  NGINX | Create general config
 
 Данный плей создает конфигурационный файл для nginx из nginx.conf.j2 и копирует его в /etc/nginx/nginx.conf . После копирования конфиг файла необходимо перезапустить сервис nginx. Это делается автоматически после копирования конфиг файла с помощью   `` notify: reload-nginx`` 
 
@@ -52,7 +52,7 @@ ansible-galaxy role init vector-role
 
  Устанавливаем git 
 
- ## lighthouse | Copy from git
+ ## Lighthouse | Copy from git
 
  Копируем из git lighthouse.Далее создаем из темплейта конфиг файл (lighthouse.conf.j2)  и копируем его в nginx  /etc/nginx/conf.d/default.conf
 
