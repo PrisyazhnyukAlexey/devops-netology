@@ -1,9 +1,10 @@
 # Домашнее задание к занятию 3 «Использование Ansible»
 
-## Структура
+## Описание
 
   Terraform Папка . В ней описан код для создания трех виртуальных машин в yandex cloud. \
   Ansible в папке terraform. В ней описан код по установке и настроке vector,clickhouse,LightHouse 
+  
 
  # Terraform
 
@@ -51,26 +52,26 @@
 
 ## Структура
 1. Install Clickhouse (tag: Clickhouse)
-    - Handlers: Start clickhouse service
-    -  Task: Get clickhouse distrib
-    - Task: Install clickhouse packages
-    - Task: Create database
+    - Handlers: Start clickhouse service #перезаупскает сервис Clickhouse
+    -  Task: Get clickhouse distrib #скачивает дистрибутив
+    - Task: Install clickhouse packages #устанавливает скаченный дистрибутив
+    - Task: Create database #создает базу данных с помощью command
 2. Install Vector ( tag: vector)
-    - Handlers: Start Vector service
-    - Task:  Get vector distrib
-    - Task: Install vector packages
-    - Task: Create vector config file (vector.yml)
-    - Task: Vector systemd unit (vector.service)
+    - Handlers: Start Vector service #хендлер на перезапуск сервиса
+    - Task:  Get vector distrib #скачивает дистрибутив vector
+    - Task: Install vector packages #устанавливает скаченный дистрибутив
+    - Task: Create vector config file (vector.yml) #Создаем конфиг файл из файла-шаблона
+    - Task: Vector systemd unit (vector.service) #Создаем конфиг файл из файла-шаблона
 3. Install nginx ( tag: nginx)
-    - Handlers: start-nginx
-    - Task: Install epel-release
-    - Task: Install nginx
-    - Task: Create general config (nginx.conf.j2)
+    - Handlers: start-nginx #Хендлер для перезагрузки ngix
+    - Task: Install epel-release #Устанавливаем epel-release
+    - Task: Install nginx   #Устанавливаем nginx
+    - Task: Create general config (nginx.conf.j2) # Создаем конфиг файл для nginx с помощью шаблона и копируем его на хост
 4. Install Lighthouse ( tag: Lighthouse )
-    - Handlers: reload-nginx
-    - Pre_tasks:  Install dependencies
-    - Task:  Copy from git
-    - Task:  Create lighthouse config (lighthouse.conf.j2)
+    - Handlers: reload-nginx #хендлер для перезапуска сервиса
+    - Pre_tasks:  Install dependencies #установка git 
+    - Task:  Copy from git #Скачиваем код lighthouse из git и копируем в свою директорию 
+    - Task:  Create lighthouse config (lighthouse.conf.j2) #Создаем конфиг файл из шаблона
 
 # Ссылки
 https://github.com/djohnii/devops-netology/tree/main/mnt-homeworks-MNT-video/08-ansible-03-yandex/terraform
