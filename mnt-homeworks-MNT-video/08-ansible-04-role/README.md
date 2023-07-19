@@ -25,6 +25,14 @@ ansible-galaxy role init vector-role
 4. На основе tasks из старого playbook заполните новую role. Разнесите переменные между `vars` и `default`. 
 5. Перенести нужные шаблоны конфигов в `templates`.
 6. Опишите в `README.md` обе роли и их параметры.
+# Role [ansible_lighthouse](https://github.com/djohnii/ansible_lighthouse)
+Данная роль устанавливает nginx , создает для него конфиг файл и перезапускает nginx. Далее система устанавливает git и с помощью него устанавливает Lighthouse . Добавляет конфиг файл для Lighthouse и снова перезапускает nginx.
+- - name: NGINX | Install epel-release
+Далее создает конфигурационный файл для nginx из nginx.conf.j2 и копирует его в /etc/nginx/nginx.conf . После копирования конфиг файла необходимо перезапустить сервис nginx. Это делается автоматически после копирования конфиг файла с помощью   `` notify: reload-nginx`` \
+Далее
+
+
+
 7. Повторите шаги 3–6 для LightHouse. Помните, что одна роль должна настраивать один продукт.
 8. Выложите все roles в репозитории. Проставьте теги, используя семантическую нумерацию. Добавьте roles в `requirements.yml` в playbook.
 ```
