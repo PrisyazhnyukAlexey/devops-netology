@@ -29,7 +29,7 @@ ansible-galaxy role init vector-role
 # Role [ansible_lighthouse](https://github.com/djohnii/ansible_lighthouse)
 
 Данная роль устанавливает nginx , создает для него конфиг файл и перезапускает nginx. Далее система устанавливает git и с помощью него устанавливает Lighthouse . Добавляет конфиг файл для Lighthouse и снова перезапускает nginx. \
-Переменные
+## Переменные
 | vars | description |
 |-------|-------------|
 |lighthouse_vcs| path for app lighthouse in git |
@@ -56,7 +56,40 @@ ansible-galaxy role init vector-role
 
  Копируем из git lighthouse.Далее создаем из темплейта конфиг файл (lighthouse.conf.j2)  и копируем его в nginx  /etc/nginx/conf.d/default.conf
 
+# Role [ansible_vector](https://github.com/djohnii/ansible_vector) 
+Данная роль скачивает пакет vector.rpm , инсталирует скаченные пакет , создает из шаблонов vector.yml.j2 в /etc/vector/vector.yml и vector.service.j2 в /usr/lib/systemd/system/vector.service. \
+С помощью vector.service указываем запуск приложения используя созданный нами конфиг с помощью команды ``ExecStart=/usr/bin/vector --config /etc/vector/vector.yml``
 
+## Переменные
+| vars | description |
+| ----- | ---------------- |
+|vector_version| app version |
+|vector_type| type vector logs |
+|vector_format| format for vector logs|
+|vector_sinks_type| synchronization with data storage |
+|vector_sinks_inputs| connect  sink to your source |
+|vector_sinks_database| database for storage  |
+|vector_sinks_table| table in database |
+
+| vars(default) | description |
+|--------------| ---------------------- |
+| clickhouse_ip | ip address for connect to database |
+
+## Get vector distrib
+
+Скачиваем дистрибутив vector. Используется переменная ``vector_version`` 
+
+##  Install vector packages
+
+Устанавливаем скаченные дистрибутив. После установки запускаем сервис с помощью handler ``notify: Start Vector service``
+
+##  Create vector config file
+
+Создаем конфигурационный файл из шаблона vector.yml.j2 и копируем его по пути /etc/vector/vector.yml. Указываем владельца файлаи группу.
+
+##  Vector systemd unit
+
+Создаем конфигурационный файл из шаблона  vector.service.j2 и копируем его по пути  /usr/lib/systemd/system/vector.service. Задаем владельца и группу файла. Вызываем хендлер для перезапуска сервиса.
 
 7. Повторите шаги 3–6 для LightHouse. Помните, что одна роль должна настраивать один продукт.
 8. Выложите все roles в репозитории. Проставьте теги, используя семантическую нумерацию. Добавьте roles в `requirements.yml` в playbook.
