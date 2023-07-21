@@ -74,7 +74,35 @@ molecule-docker 2.1.0 requires molecule>=4.0.0, but you have molecule 3.5.2 whic
       when: result.rc != 0                        #если переменная result не равна 0 то задача fail будет выполнена и выводится сообщение об ошибке.
 ```
 5. Запустите тестирование роли повторно и проверьте, что оно прошло успешно.
+# Ошбики
 
+![error](image.png)
+```
+почему то выдает  ошибку после переустановки python,docker,molecule.. \
+Версии:
+
+molecule 3.5.2 using python 3.10 
+    ansible:2.15.2
+    delegated:3.5.2 from molecule
+    docker:2.1.0 from molecule_docker requiring collections: community.docker>=3.0.2 ansible.posix>=1.4.0
+    podman:2.0.3 from molecule_podman requiring collections: containers.podman>=1.7.0 ansible.posix>=1.3.0
+
+Docker version 24.0.4, build 3713ee1
+
+Python 3.10.6
+
+ansible [core 2.15.2]
+  config file = None
+  configured module search path = ['/root/.ansible/plugins/modules', '/usr/share/ansible/plugins/modules']
+  ansible python module location = /usr/local/lib/python3.10/dist-packages/ansible
+  ansible collection location = /root/.ansible/collections:/usr/share/ansible/collections
+  executable location = /usr/local/bin/ansible
+  python version = 3.10.6 (main, May 29 2023, 11:10:38) [GCC 11.3.0] (/usr/bin/python3)
+  jinja version = 3.0.3
+  libyaml = True
+
+
+```
 
 6. Добавьте новый тег на коммит с рабочим сценарием в соответствии с семантическим версионированием.
    Добавил тег 1.1.1 (ссылка в конце стать)
@@ -210,7 +238,7 @@ centos7:
 
 # Ошбики
 
-
+![error](image.png)
 ```
 почему то выдает сдоровенную ошибку после переустановки python,docker,molecule.. \
 Версии:
@@ -239,4 +267,4 @@ ansible [core 2.15.2]
 ```
 
 
-![error](image.png)
+
