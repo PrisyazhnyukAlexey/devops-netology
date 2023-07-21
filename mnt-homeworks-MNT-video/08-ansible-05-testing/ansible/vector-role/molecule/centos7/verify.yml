@@ -1,0 +1,37 @@
+---
+# This is an example playbook to execute Ansible tests.
+
+- name: Verify
+  hosts: all
+  gather_facts: false
+  tasks:
+    - name: Example assertion
+      ansible.builtin.assert:
+        that: true
+    - name: check config vector.yml
+      stat:
+        path: /etc/vector/vector.yml
+      register: vector_file
+
+    - name: assert file
+      assert:
+        that: vector_file.stat.exists
+        fail_msg: "File 'vector.yml ' not exist "
+    - name: start vector
+      command: vector --config /etc/vector/vector.yml
+      ignore_errors: true
+      register: output
+    - name: assert vector start
+      assert:
+        that: 
+          - output.rc == 0
+        fail_msg: "Vector not started"
+    - name: run yamllint for valid vector.yml
+      command: yamllint /etc/vector/vector.yml
+      register: result
+      ignore_errors: true
+
+    - name: Errors in yaml file
+      fail:
+        msg: "vector.yml have errors"
+      when: result.rc != 0
