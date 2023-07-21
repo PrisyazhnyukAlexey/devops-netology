@@ -79,7 +79,6 @@ molecule-docker 2.1.0 requires molecule>=4.0.0, but you have molecule 3.5.2 whic
 
 
 root@node1:/home/aloha/Desktop/devops-netology/mnt-homeworks-MNT-video/08-ansible-05-testing/ansible/vector-role# molecule test -s centos7
-WARNING  Driver docker does not provide a schema.
 INFO     centos7 scenario test matrix: dependency, cleanup, destroy, syntax, create, prepare, converge, idempotence, side_effect, verify, cleanup, destroy
 INFO     Performing prerun with role_name_check=0...
 INFO     Set ANSIBLE_LIBRARY=/root/.cache/ansible-compat/f5bcd7/modules:/root/.ansible/plugins/modules:/usr/share/ansible/plugins/modules
