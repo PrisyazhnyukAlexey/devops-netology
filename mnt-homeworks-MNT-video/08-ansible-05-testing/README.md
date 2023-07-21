@@ -75,33 +75,9 @@ molecule-docker 2.1.0 requires molecule>=4.0.0, but you have molecule 3.5.2 whic
 ```
 5. Запустите тестирование роли повторно и проверьте, что оно прошло успешно.
 
-```
-почему то выдает сдоровенную ошибку после переустановки python,docker,molecule.. \
-Версии:
 
-molecule 3.5.2 using python 3.10 
-    ansible:2.15.2
-    delegated:3.5.2 from molecule
-    docker:2.1.0 from molecule_docker requiring collections: community.docker>=3.0.2 ansible.posix>=1.4.0
-    podman:2.0.3 from molecule_podman requiring collections: containers.podman>=1.7.0 ansible.posix>=1.3.0
-
-Docker version 24.0.4, build 3713ee1
-
-Python 3.10.6
-
-ansible [core 2.15.2]
-  config file = None
-  configured module search path = ['/root/.ansible/plugins/modules', '/usr/share/ansible/plugins/modules']
-  ansible python module location = /usr/local/lib/python3.10/dist-packages/ansible
-  ansible collection location = /root/.ansible/collections:/usr/share/ansible/collections
-  executable location = /usr/local/bin/ansible
-  python version = 3.10.6 (main, May 29 2023, 11:10:38) [GCC 11.3.0] (/usr/bin/python3)
-  jinja version = 3.0.3
-  libyaml = True
-
-
-```
-5. Добавьте новый тег на коммит с рабочим сценарием в соответствии с семантическим версионированием.
+6. Добавьте новый тег на коммит с рабочим сценарием в соответствии с семантическим версионированием.
+   Добавил тег 1.1.1 (ссылка в конце стать)
 
 ### Tox
 ```
@@ -111,6 +87,7 @@ pip3 install tox
 1. Добавьте в директорию с vector-role файлы из [директории](./example).
 2. Запустите `docker run --privileged=True -v <path_to_repo>:/opt/vector-role -w /opt/vector-role -it aragast/netology:latest /bin/bash`, где path_to_repo — путь до корня репозитория с vector-role на вашей файловой системе.
 3. Внутри контейнера выполните команду `tox`, посмотрите на вывод.
+
 ```
 [root@8a95a3d1e2ab vector-role]# tox
 py37-ansible210 installed: ansible==2.10.7,ansible-base==2.10.17,ansible-compat==1.0.0,ansible-lint==5.1.3,arrow==1.2.3,bcrypt==4.0.1,binaryornot==0.4.4,bracex==2.3.post1,cached-property==1.5.2,Cerberus==1.3.2,certifi==2023.5.7,cffi==1.15.1,chardet==5.1.0,charset-normalizer==3.2.0,click==8.1.6,click-help-colors==0.9.1,cookiecutter==2.2.3,cryptography==41.0.2,distro==1.8.0,enrich==1.2.7,idna==3.4,importlib-metadata==6.7.0,Jinja2==3.1.2,jmespath==1.0.1,lxml==4.9.3,markdown-it-py==2.2.0,MarkupSafe==2.1.3,mdurl==0.1.2,molecule==3.5.2,molecule-podman==1.1.0,packaging==23.1,paramiko==2.12.0,pathspec==0.11.1,pluggy==1.2.0,pycparser==2.21,Pygments==2.15.1,PyNaCl==1.5.0,python-dateutil==2.8.2,python-slugify==8.0.1,PyYAML==5.4.1,requests==2.31.0,rich==13.4.2,ruamel.yaml==0.17.32,ruamel.yaml.clib==0.2.7,selinux==0.2.1,six==1.16.0,subprocess-tee==0.3.5,tenacity==8.2.2,text-unidecode==1.3,typing_extensions==4.7.1,urllib3==2.0.4,wcmatch==8.4.1,yamllint==1.26.3,zipp==3.15.0
@@ -175,7 +152,7 @@ ERROR:   py39-ansible30: undefined
 
 ```
 
-5. Создайте облегчённый сценарий для `molecule` с драйвером `molecule_podman`. Проверьте его на исполнимость.
+4. Создайте облегчённый сценарий для `molecule` с драйвером `molecule_podman`. Проверьте его на исполнимость.
 ```
 Для начала устанавливаем molecule_podman
 yum -y install podman
@@ -190,7 +167,7 @@ scenario:
   - destroy
 
 ```
-6. Пропишите правильную команду в `tox.ini`, чтобы запускался облегчённый сценарий.
+5. Пропишите правильную команду в `tox.ini`, чтобы запускался облегчённый сценарий.
 
 ```
 [tox]
@@ -209,7 +186,7 @@ commands =
     {posargs:molecule test -s centos7 --destroy always}
 ```
 
-8. Запустите команду `tox`. Убедитесь, что всё отработало успешно.
+6. Запустите команду `tox`. Убедитесь, что всё отработало успешно.
 
 ```
 
@@ -224,30 +201,42 @@ centos7:
 ```
 
 
-9. Добавьте новый тег на коммит с рабочим сценарием в соответствии с семантическим версионированием.
+7. Добавьте новый тег на коммит с рабочим сценарием в соответствии с семантическим версионированием.
 
-После выполнения у вас должно получится два сценария molecule и один tox.ini файл в репозитории. Не забудьте указать в ответе теги решений Tox и Molecule заданий. В качестве решения пришлите ссылку на  ваш репозиторий и скриншоты этапов выполнения задания. 
+[molecule]https://github.com/djohnii/vector_role/tree/1.1.1
 
-## Необязательная часть
-
-1. Проделайте схожие манипуляции для создания роли LightHouse.
-2. Создайте сценарий внутри любой из своих ролей, который умеет поднимать весь стек при помощи всех ролей.
-3. Убедитесь в работоспособности своего стека. Создайте отдельный verify.yml, который будет проверять работоспособность интеграции всех инструментов между ними.
-4. Выложите свои roles в репозитории.
-
-В качестве решения пришлите ссылки и скриншоты этапов выполнения задания.
-
----
-
-### Как оформить решение задания
-
-Выполненное домашнее задание пришлите в виде ссылки на .md-файл в вашем репозитории.
-
-# Выполнение
-
-molecule init scenario default --driver-name docker
+[tox]https://github.com/djohnii/vector_role/tree/1.2.1
 
 
+# Ошбики
+
+
+```
+почему то выдает сдоровенную ошибку после переустановки python,docker,molecule.. \
+Версии:
+
+molecule 3.5.2 using python 3.10 
+    ansible:2.15.2
+    delegated:3.5.2 from molecule
+    docker:2.1.0 from molecule_docker requiring collections: community.docker>=3.0.2 ansible.posix>=1.4.0
+    podman:2.0.3 from molecule_podman requiring collections: containers.podman>=1.7.0 ansible.posix>=1.3.0
+
+Docker version 24.0.4, build 3713ee1
+
+Python 3.10.6
+
+ansible [core 2.15.2]
+  config file = None
+  configured module search path = ['/root/.ansible/plugins/modules', '/usr/share/ansible/plugins/modules']
+  ansible python module location = /usr/local/lib/python3.10/dist-packages/ansible
+  ansible collection location = /root/.ansible/collections:/usr/share/ansible/collections
+  executable location = /usr/local/bin/ansible
+  python version = 3.10.6 (main, May 29 2023, 11:10:38) [GCC 11.3.0] (/usr/bin/python3)
+  jinja version = 3.0.3
+  libyaml = True
+
+
+```
 
 
 ![error](image.png)
