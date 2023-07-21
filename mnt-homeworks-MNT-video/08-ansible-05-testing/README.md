@@ -372,14 +372,14 @@ deps =
     ansible210: ansible<3.0
     ansible30: ansible<3.1
 commands =
-    {posargs:molecule test -s centos7 --destroy always}
+    {posargs:molecule test -s tox --destroy always}
 ```
 
 6. Запустите команду `tox`. Убедитесь, что всё отработало успешно.
 
 ```
 
-root@node1:/home/aloha/Desktop/devops-netology/mnt-homeworks-MNT-video/08-ansible-05-testing/ansible/vector-role# molecule matrix -s centos7 test
+root@node1:/home/aloha/Desktop/devops-netology/mnt-homeworks-MNT-video/08-ansible-05-testing/ansible/vector-role# molecule matrix -s tox test
 INFO     Test matrix
 ---                                                                                                                                                                                                                           
 centos7:                                                                                                                                                                                                                         
