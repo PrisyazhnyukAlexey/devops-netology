@@ -76,33 +76,194 @@ molecule-docker 2.1.0 requires molecule>=4.0.0, but you have molecule 3.5.2 whic
 5. Запустите тестирование роли повторно и проверьте, что оно прошло успешно.
 # Ошбики
 
-![error](image.png)
 ```
-почему то выдает  ошибку после переустановки python,docker,molecule.. \
-Версии:
 
-molecule 3.5.2 using python 3.10 
-    ansible:2.15.2
-    delegated:3.5.2 from molecule
-    docker:2.1.0 from molecule_docker requiring collections: community.docker>=3.0.2 ansible.posix>=1.4.0
-    podman:2.0.3 from molecule_podman requiring collections: containers.podman>=1.7.0 ansible.posix>=1.3.0
 
-Docker version 24.0.4, build 3713ee1
+root@node1:/home/aloha/Desktop/devops-netology/mnt-homeworks-MNT-video/08-ansible-05-testing/ansible/vector-role# molecule test -s centos7
+WARNING  Driver docker does not provide a schema.
+INFO     centos7 scenario test matrix: dependency, cleanup, destroy, syntax, create, prepare, converge, idempotence, side_effect, verify, cleanup, destroy
+INFO     Performing prerun with role_name_check=0...
+INFO     Set ANSIBLE_LIBRARY=/root/.cache/ansible-compat/f5bcd7/modules:/root/.ansible/plugins/modules:/usr/share/ansible/plugins/modules
+INFO     Set ANSIBLE_COLLECTIONS_PATH=/root/.cache/ansible-compat/f5bcd7/collections:/root/.ansible/collections:/usr/share/ansible/collections
+INFO     Set ANSIBLE_ROLES_PATH=/root/.cache/ansible-compat/f5bcd7/roles:/root/.ansible/roles:/usr/share/ansible/roles:/etc/ansible/roles
+INFO     Using /root/.cache/ansible-compat/f5bcd7/roles/alexeyprisyazhnyuk.vector symlink to current repository in order to enable Ansible to find the role using its expected full name.
+INFO     Running centos7 > dependency
+WARNING  Skipping, missing the requirements file.
+WARNING  Skipping, missing the requirements file.
+INFO     Running centos7 > cleanup
+WARNING  Skipping, cleanup playbook not configured.
+INFO     Running centos7 > destroy
+INFO     Sanity checks: 'docker'
+[WARNING]: Skipping plugin (/usr/local/lib/python3.10/dist-
+packages/ansible/plugins/callback/selective.py), cannot load: cannot import
+name 'codeCodes' from 'ansible.utils.color' (/usr/local/lib/python3.10/dist-
+packages/ansible/utils/color.py)
 
-Python 3.10.6
+PLAY [Destroy] *****************************************************************
 
-ansible [core 2.15.2]
-  config file = None
-  configured module search path = ['/root/.ansible/plugins/modules', '/usr/share/ansible/plugins/modules']
-  ansible python module location = /usr/local/lib/python3.10/dist-packages/ansible
-  ansible collection location = /root/.ansible/collections:/usr/share/ansible/collections
-  executable location = /usr/local/bin/ansible
-  python version = 3.10.6 (main, May 29 2023, 11:10:38) [GCC 11.3.0] (/usr/bin/python3)
-  jinja version = 3.0.3
-  libyaml = True
+TASK [Set async_dir for HOME env] **********************************************
+[WARNING]: An unexpected error occurred during Jinja2 plugin loading:
+'NoneType' object has no attribute '_original_path'
+ok: [localhost]
+
+TASK [Destroy molecule instance(s)] ********************************************
+[WARNING]: An unexpected error occurred during Jinja2 plugin loading:
+'NoneType' object has no attribute '_original_path'
+changed: [localhost] => (item=instance)
+
+TASK [Wait for instance(s) deletion to complete] *******************************
+[WARNING]: An unexpected error occurred during Jinja2 plugin loading:
+'NoneType' object has no attribute '_original_path'
+FAILED - RETRYING: [localhost]: Wait for instance(s) deletion to complete (300 retries left).
+ok: [localhost] => (item=instance)
+
+TASK [Delete docker networks(s)] ***********************************************
+skipping: [localhost]
+
+PLAY RECAP *********************************************************************
+localhost                  : ok=3    changed=1    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0
+
+INFO     Running centos7 > syntax
+
+playbook: /home/aloha/Desktop/devops-netology/mnt-homeworks-MNT-video/08-ansible-05-testing/ansible/vector-role/molecule/centos7/converge.yml
+INFO     Running centos7 > create
+[WARNING]: Skipping plugin (/usr/local/lib/python3.10/dist-
+packages/ansible/plugins/callback/selective.py), cannot load: cannot import
+name 'codeCodes' from 'ansible.utils.color' (/usr/local/lib/python3.10/dist-
+packages/ansible/utils/color.py)
+
+PLAY [Create] ******************************************************************
+
+TASK [Set async_dir for HOME env] **********************************************
+[WARNING]: An unexpected error occurred during Jinja2 plugin loading:
+'NoneType' object has no attribute '_original_path'
+ok: [localhost]
+
+TASK [Log into a Docker registry] **********************************************
+skipping: [localhost] => (item=None) 
+skipping: [localhost]
+
+TASK [Check presence of custom Dockerfiles] ************************************
+[WARNING]: An unexpected error occurred during Jinja2 plugin loading:
+'NoneType' object has no attribute '_original_path'
+ok: [localhost] => (item={'image': 'docker.io/pycontribs/centos:7', 'name': 'instance', 'pre_build_image': True})
+
+TASK [Create Dockerfiles from image names] *************************************
+[WARNING]: An unexpected error occurred during Jinja2 plugin loading:
+'NoneType' object has no attribute '_original_path'
+skipping: [localhost] => (item={'image': 'docker.io/pycontribs/centos:7', 'name': 'instance', 'pre_build_image': True}) 
+skipping: [localhost]
+
+TASK [Synchronization the context] *********************************************
+[WARNING]: An unexpected error occurred during Jinja2 plugin loading:
+'NoneType' object has no attribute '_original_path'
+skipping: [localhost] => (item={'image': 'docker.io/pycontribs/centos:7', 'name': 'instance', 'pre_build_image': True}) 
+skipping: [localhost]
+
+TASK [Discover local Docker images] ********************************************
+[WARNING]: An unexpected error occurred during Jinja2 plugin loading:
+'NoneType' object has no attribute '_original_path'
+ok: [localhost] => (item={'changed': False, 'skipped': True, 'skip_reason': 'Conditional result was False', 'false_condition': 'not item.pre_build_image | default(false)', 'item': {'image': 'docker.io/pycontribs/centos:7', 'name': 'instance', 'pre_build_image': True}, 'ansible_loop_var': 'item', 'i': 0, 'ansible_index_var': 'i'})
+
+TASK [Build an Ansible compatible image (new)] *********************************
+[WARNING]: An unexpected error occurred during Jinja2 plugin loading:
+'NoneType' object has no attribute '_original_path'
+skipping: [localhost] => (item=molecule_local/docker.io/pycontribs/centos:7) 
+skipping: [localhost]
+
+TASK [Create docker network(s)] ************************************************
+skipping: [localhost]
+
+TASK [Determine the CMD directives] ********************************************
+[WARNING]: An unexpected error occurred during Jinja2 plugin loading:
+'NoneType' object has no attribute '_original_path'
+ok: [localhost] => (item={'image': 'docker.io/pycontribs/centos:7', 'name': 'instance', 'pre_build_image': True})
+
+TASK [Create molecule instance(s)] *********************************************
+[WARNING]: An unexpected error occurred during Jinja2 plugin loading:
+'NoneType' object has no attribute '_original_path'
+changed: [localhost] => (item=instance)
+
+TASK [Wait for instance(s) creation to complete] *******************************
+[WARNING]: An unexpected error occurred during Jinja2 plugin loading:
+'NoneType' object has no attribute '_original_path'
+FAILED - RETRYING: [localhost]: Wait for instance(s) creation to complete (300 retries left).
+changed: [localhost] => (item={'failed': 0, 'started': 1, 'finished': 0, 'ansible_job_id': 'j234890195695.3006088', 'results_file': '/root/.ansible_async/j234890195695.3006088', 'changed': True, 'item': {'image': 'docker.io/pycontribs/centos:7', 'name': 'instance', 'pre_build_image': True}, 'ansible_loop_var': 'item'})
+
+PLAY RECAP *********************************************************************
+localhost                  : ok=6    changed=2    unreachable=0    failed=0    skipped=5    rescued=0    ignored=0
+
+INFO     Running centos7 > prepare
+WARNING  Skipping, prepare playbook not configured.
+INFO     Running centos7 > converge
+[WARNING]: Skipping plugin (/usr/local/lib/python3.10/dist-
+packages/ansible/plugins/callback/selective.py), cannot load: cannot import
+name 'codeCodes' from 'ansible.utils.color' (/usr/local/lib/python3.10/dist-
+packages/ansible/utils/color.py)
+
+PLAY [Converge] ****************************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [instance]
+
+TASK [Include vector-role] *****************************************************
+
+TASK [vector-role : Get vector distrib] ****************************************
+changed: [instance]
+
+TASK [vector-role : Install vector packages] ***********************************
+changed: [instance]
+
+TASK [vector-role : Create vector config file] *********************************
+changed: [instance]
+
+TASK [vector-role : Vector systemd unit] ***************************************
+changed: [instance]
+
+RUNNING HANDLER [vector-role : Start Vector service] ***************************
+fatal: [instance]: FAILED! => {"changed": false, "msg": "Service is in unknown state", "status": {}}
+
+PLAY RECAP *********************************************************************
+instance                   : ok=5    changed=4    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0
+
+CRITICAL Ansible return code was 2, command was: ['ansible-playbook', '--inventory', '/root/.cache/molecule/vector-role/centos7/inventory', '--skip-tags', 'molecule-notest,notest', '/home/aloha/Desktop/devops-netology/mnt-homeworks-MNT-video/08-ansible-05-testing/ansible/vector-role/molecule/centos7/converge.yml']
+WARNING  An error occurred during the test sequence action: 'converge'. Cleaning up.
+INFO     Running centos7 > cleanup
+WARNING  Skipping, cleanup playbook not configured.
+INFO     Running centos7 > destroy
+[WARNING]: Skipping plugin (/usr/local/lib/python3.10/dist-
+packages/ansible/plugins/callback/selective.py), cannot load: cannot import
+name 'codeCodes' from 'ansible.utils.color' (/usr/local/lib/python3.10/dist-
+packages/ansible/utils/color.py)
+
+PLAY [Destroy] *****************************************************************
+
+TASK [Set async_dir for HOME env] **********************************************
+[WARNING]: An unexpected error occurred during Jinja2 plugin loading:
+'NoneType' object has no attribute '_original_path'
+ok: [localhost]
+
+TASK [Destroy molecule instance(s)] ********************************************
+[WARNING]: An unexpected error occurred during Jinja2 plugin loading:
+'NoneType' object has no attribute '_original_path'
+changed: [localhost] => (item=instance)
+
+TASK [Wait for instance(s) deletion to complete] *******************************
+[WARNING]: An unexpected error occurred during Jinja2 plugin loading:
+'NoneType' object has no attribute '_original_path'
+FAILED - RETRYING: [localhost]: Wait for instance(s) deletion to complete (300 retries left).
+changed: [localhost] => (item=instance)
+
+TASK [Delete docker networks(s)] ***********************************************
+skipping: [localhost]
+
+PLAY RECAP *********************************************************************
+localhost                  : ok=3    changed=2    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0
+
 
 
 ```
+
 
 6. Добавьте новый тег на коммит с рабочим сценарием в соответствии с семантическим версионированием.
    Добавил тег 1.1.1 (ссылка в конце стать)
@@ -264,6 +425,16 @@ ansible [core 2.15.2]
   libyaml = True
 
 
+Починил переустановкой и сбросом
+
+ 2005  pip3 install ansible-lint
+ 2006  pip3 install yamllint
+ 2007  pip install ansible-lint
+
+ 2009  molecule destroy
+ 2010  pip3 install molecule-docker
+ 2011  molecule reset
+ 2013  molecule test -s centos7
 ```
 
 
