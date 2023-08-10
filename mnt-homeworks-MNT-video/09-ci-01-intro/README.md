@@ -18,6 +18,9 @@
 6. On test -> On fix, Done.
 7. Done -> Closed, Open.
 
+   ![image](https://github.com/djohnii/devops-netology/assets/91311426/77c850ae-2780-45cb-9617-efd9c84516e0)
+
+
 Остальные задачи должны проходить по упрощённому workflow:
 
 1. Open -> On develop.
