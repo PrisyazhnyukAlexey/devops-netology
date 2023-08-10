@@ -29,6 +29,9 @@
 4. On test -> On develop, Done.
 5. Done -> Closed, Open.
 
+   ![image](https://github.com/djohnii/devops-netology/assets/91311426/f949e6e1-ef1b-4008-a7cf-c48fcf6f4da0)
+
+
 **Что нужно сделать**
 
 1. Создайте задачу с типом bug, попытайтесь провести его по всему workflow до Done. 
