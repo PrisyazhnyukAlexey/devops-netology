@@ -18,7 +18,8 @@
 6. On test -> On fix, Done.
 7. Done -> Closed, Open.
 
-   ![image](https://github.com/djohnii/devops-netology/assets/91311426/77c850ae-2780-45cb-9617-efd9c84516e0)
+   ![image](https://github.com/djohnii/devops-netology/assets/91311426/c6dcd9bf-2f9d-42a1-87da-42a933626d7e)
+
 
 
 Остальные задачи должны проходить по упрощённому workflow:
@@ -29,14 +30,21 @@
 4. On test -> On develop, Done.
 5. Done -> Closed, Open.
 
-   ![image](https://github.com/djohnii/devops-netology/assets/91311426/f949e6e1-ef1b-4008-a7cf-c48fcf6f4da0)
+  ![image](https://github.com/djohnii/devops-netology/assets/91311426/ade4881c-ad9d-470f-a3b8-e62bbb7616cd)
+
 
 
 **Что нужно сделать**
 
-1. Создайте задачу с типом bug, попытайтесь провести его по всему workflow до Done. 
-1. Создайте задачу с типом epic, к ней привяжите несколько задач с типом task, проведите их по всему workflow до Done. 
-1. При проведении обеих задач по статусам используйте kanban. 
+1. Создайте задачу с типом bug, попытайтесь провести его по всему workflow до Done.
+   ![image](https://github.com/djohnii/devops-netology/assets/91311426/23bc409d-9eea-4b50-91ae-7e86399804fc)
+ 
+1. Создайте задачу с типом epic, к ней привяжите несколько задач с типом task, проведите их по всему workflow до Done.
+   ![image](https://github.com/djohnii/devops-netology/assets/91311426/123f85b1-34fe-4abb-bf40-a4865dc4bd95)
+ 
+1. При проведении обеих задач по статусам используйте kanban
+   ![image](https://github.com/djohnii/devops-netology/assets/91311426/bb5b9bb7-f26b-419f-87a1-d62edd9e6a7b)
+ 
 1. Верните задачи в статус Open.
 1. Перейдите в Scrum, запланируйте новый спринт, состоящий из задач эпика и одного бага, стартуйте спринт, проведите задачи до состояния Closed. Закройте спринт.
 2. Если всё отработалось в рамках ожидания — выгрузите схемы workflow для импорта в XML. Файлы с workflow и скриншоты workflow приложите к решению задания.
