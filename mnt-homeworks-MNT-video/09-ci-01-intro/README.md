@@ -54,7 +54,10 @@
 6 Если всё отработалось в рамках ожидания — выгрузите схемы workflow для импорта в XML. Файлы с workflow и скриншоты workflow приложите к решению задания.
 
 https://github.com/djohnii/devops-netology/blob/main/mnt-homeworks-MNT-video/09-ci-01-intro/2.xml
+
+
 https://github.com/djohnii/devops-netology/blob/main/mnt-homeworks-MNT-video/09-ci-01-intro/1.xml
+
 ---
 
 
