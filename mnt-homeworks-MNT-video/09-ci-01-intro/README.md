@@ -59,6 +59,7 @@ https://github.com/djohnii/devops-netology/blob/main/mnt-homeworks-MNT-video/09-
 https://github.com/djohnii/devops-netology/blob/main/mnt-homeworks-MNT-video/09-ci-01-intro/1.xml
 
 ---
+![image](https://github.com/djohnii/devops-netology/assets/91311426/8f3dfb9d-6fe0-489d-813d-6cb15eba3ea7)
 
 
 ### Как оформить решение задания
