@@ -19,11 +19,18 @@
 2. Скачайте пакет sonar-scanner, который вам предлагает скачать SonarQube.
 3. Сделайте так, чтобы binary был доступен через вызов в shell (или поменяйте переменную PATH, или любой другой, удобный вам способ).
 4. Проверьте `sonar-scanner --version`.
+![image](https://github.com/djohnii/devops-netology/assets/91311426/7540253d-9de4-49a8-963d-83030f46d003)
+
 5. Запустите анализатор против кода из директории [example](./example) с дополнительным ключом `-Dsonar.coverage.exclusions=fail.py`.
+![image](https://github.com/djohnii/devops-netology/assets/91311426/c0989896-30e1-4171-a087-b439fb875673)
+
 6. Посмотрите результат в интерфейсе.
+![image](https://github.com/djohnii/devops-netology/assets/91311426/b833a1ca-a481-49ca-bfbf-f19c88996b8d)
+
 7. Исправьте ошибки, которые он выявил, включая warnings.
 8. Запустите анализатор повторно — проверьте, что QG пройдены успешно.
 9. Сделайте скриншот успешного прохождения анализа, приложите к решению ДЗ.
+![image](https://github.com/djohnii/devops-netology/assets/91311426/e5a7f684-b99d-481b-8217-dc9ce6d17bb2)
 
 ## Знакомство с Nexus
 
