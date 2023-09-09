@@ -77,8 +77,8 @@ metadata modelVersion="1.1.0">
 
 1. Поменяйте в `pom.xml` блок с зависимостями под ваш артефакт из первого пункта задания для Nexus (java с версией 8_282).
 2. Запустите команду `mvn package` в директории с `pom.xml`, ожидайте успешного окончания.
+![image](https://github.com/djohnii/devops-netology/assets/91311426/06db5cd9-c534-4132-8f05-4e095c399c2e)
 
-![image](https://github.com/djohnii/devops-netology/assets/91311426/c93609de-51b2-45b9-8155-f18f7aa44a63)
 
 3. Проверьте директорию `~/.m2/repository/`, найдите ваш артефакт.
 ![image](https://github.com/djohnii/devops-netology/assets/91311426/8d024416-a3fa-41a7-9a5f-cc8c682e33d2)
@@ -104,7 +104,7 @@ metadata modelVersion="1.1.0">
      <dependency>
       <groupId>netology</groupId>
       <artifactId>java</artifactId>
-      <version>2_1</version>
+      <version>8_242</version>
       <classifier>distrib</classifier>
       <type>tar.gz</type>
     </dependency>
