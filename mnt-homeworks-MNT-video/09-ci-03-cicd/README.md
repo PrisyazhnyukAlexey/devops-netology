@@ -104,7 +104,7 @@ metadata modelVersion="1.1.0">
      <dependency>
       <groupId>netology</groupId>
       <artifactId>java</artifactId>
-      <version>8_282</version>
+      <version>2_1</version>
       <classifier>distrib</classifier>
       <type>tar.gz</type>
     </dependency>
