@@ -47,7 +47,22 @@
 2. В него же загрузите такой же артефакт, но с version: 8_102.
 3. Проверьте, что все файлы загрузились успешно.
 4. В ответе пришлите файл `maven-metadata.xml` для этого артефекта.
-
+![image](https://github.com/djohnii/devops-netology/assets/91311426/da0f2656-3444-43bd-b8e4-e2bf5139e21c)
+```
+metadata modelVersion="1.1.0">
+<groupId>netology</groupId>
+<artifactId>java</artifactId>
+<versioning>
+<latest>8_282</latest>
+<release>8_282</release>
+<versions>
+<version>8_102</version>
+<version>8_282</version>
+</versions>
+<lastUpdated>20230909113946</lastUpdated>
+</versioning>
+</metadata>
+```
 ### Знакомство с Maven
 
 ### Подготовка к выполнению
