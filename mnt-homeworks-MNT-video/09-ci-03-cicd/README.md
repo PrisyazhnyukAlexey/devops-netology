@@ -46,6 +46,8 @@
    
 2. В него же загрузите такой же артефакт, но с version: 8_102.
 3. Проверьте, что все файлы загрузились успешно.
+![image](https://github.com/djohnii/devops-netology/assets/91311426/8eed44fd-6bd4-4e81-aee5-2ef45c50d9a3)
+
 4. В ответе пришлите файл `maven-metadata.xml` для этого артефекта.
 ![image](https://github.com/djohnii/devops-netology/assets/91311426/da0f2656-3444-43bd-b8e4-e2bf5139e21c)
 ```
