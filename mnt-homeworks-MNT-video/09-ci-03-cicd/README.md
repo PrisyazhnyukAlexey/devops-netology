@@ -49,19 +49,24 @@
 ![image](https://github.com/djohnii/devops-netology/assets/91311426/8eed44fd-6bd4-4e81-aee5-2ef45c50d9a3)
 
 4. В ответе пришлите файл `maven-metadata.xml` для этого артефекта.
-![image](https://github.com/djohnii/devops-netology/assets/91311426/da0f2656-3444-43bd-b8e4-e2bf5139e21c)
+
 ```
-metadata modelVersion="1.1.0">
+<metadata modelVersion="1.1.0">
 <groupId>netology</groupId>
 <artifactId>java</artifactId>
 <versioning>
 <latest>8_282</latest>
 <release>8_282</release>
 <versions>
-<version>8_102</version>
+<version>1.0.0</version>
+<version>2_1</version>
+<version>2_10</version>
+<version>2_100</version>
+<version>2_222</version>
+<version>8_242</version>
 <version>8_282</version>
 </versions>
-<lastUpdated>20230909113946</lastUpdated>
+<lastUpdated>20230909123513</lastUpdated>
 </versioning>
 </metadata>
 ```
