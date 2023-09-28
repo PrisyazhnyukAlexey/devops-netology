@@ -417,9 +417,31 @@ ERROR: script returned exit code 1
 
 5. Создать Scripted Pipeline, наполнить его скриптом из [pipeline](./pipeline).
 6. Внести необходимые изменения, чтобы Pipeline запускал `ansible-playbook` без флагов `--check --diff`, если не установлен параметр при запуске джобы (prod_run = True). По умолчанию параметр имеет значение False и запускает прогон с флагами `--check --diff`.
+
+Добавляем в условие echo " sh 'ansible-playbook site.yml -i inventory/prod.yml --diff --check' "
+
+```
+     node("linux"){
+   stage("Git checkout"){
+       git credentialsId: '5ac0095d-0185-431b-94da-09a0ad9b0e2c', url: 'git@github.com:aragastmatb/example-playbook.git'
+   }
+   stage("Show prod_run"){
+       echo prod_run
+   }
+   stage("Run playbook"){
+       if (prod_run == 'True'){
+           echo " sh 'ansible-playbook site.yml -i inventory/prod.yml' "
+       }
+       else{
+           echo " sh 'ansible-playbook site.yml -i inventory/prod.yml --diff --check' "
+       }
+   }
+}
+```
+
 7. Проверить работоспособность, исправить ошибки, исправленный Pipeline вложить в репозиторий в файл `ScriptedJenkinsfile`.
 8. Отправить ссылку на репозиторий с ролью и Declarative Pipeline и Scripted Pipeline.
-
+https://github.com/djohnii/jenkins
 ## Необязательная часть
 
 1. Создать скрипт на groovy, который будет собирать все Job, завершившиеся хотя бы раз неуспешно. Добавить скрипт в репозиторий с решением и названием `AllJobFailure.groovy`.
