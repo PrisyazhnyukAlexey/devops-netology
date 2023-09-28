@@ -121,8 +121,7 @@ PLAY RECAP *********************************************************************
 
 2. Сделать Declarative Pipeline Job, который будет запускать `molecule test` из любого вашего репозитория с ролью.
 
-<details>
-  <summary>Declarative Pipeline Job</summary>
+
 ```
 pipeline {
     agent {
@@ -144,8 +143,6 @@ pipeline {
     }
 }
 ```
-
-</details>
 
 3. Перенести Declarative Pipeline в репозиторий в файл `Jenkinsfile`.
 4. Создать Multibranch Pipeline на запуск `Jenkinsfile` из репозитория.
