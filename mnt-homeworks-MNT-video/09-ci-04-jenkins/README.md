@@ -120,6 +120,32 @@ PLAY RECAP *********************************************************************
 </details>
 
 2. Сделать Declarative Pipeline Job, который будет запускать `molecule test` из любого вашего репозитория с ролью.
+
+<details>
+  <summary>Declarative Pipeline Job</summary>
+  
+pipeline {
+    agent {
+  label 'ansible'
+    }
+    stages {
+        stage('Check') { 
+            steps {
+                sh 'pip3 install "molecule==3.5.2" "molecule_docker"'
+                sh "docker pull aragast/netology:latest"
+            }
+        }
+        stage('Build') {
+            steps {
+                sh 'cd /root/p7-office/'
+                sh 'molecule test -s default'
+            }
+        }
+    }
+}
+  
+</details>
+
 3. Перенести Declarative Pipeline в репозиторий в файл `Jenkinsfile`.
 4. Создать Multibranch Pipeline на запуск `Jenkinsfile` из репозитория.
 5. Создать Scripted Pipeline, наполнить его скриптом из [pipeline](./pipeline).
