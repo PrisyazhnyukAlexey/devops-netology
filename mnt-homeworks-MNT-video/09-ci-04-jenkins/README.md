@@ -152,7 +152,6 @@ https://github.com/djohnii/jenkins/blob/main/Jenkinsfile
 <details>
   <summary> Multibranch Pipeline</summary>
 
-
 Branch indexing
 13:54:10 Connecting to https://api.github.com using djohnii/******
 Obtained Jenkinsfile from 5c20e6b03722fbd3aaa4c4bf5731547f2ef66a71
