@@ -442,10 +442,7 @@ ERROR: script returned exit code 1
 8. Отправить ссылку на репозиторий с ролью и Declarative Pipeline и Scripted Pipeline.
 https://github.com/djohnii/jenkins
 
-```
-Примечание
-сами ждобы отработали но ушли в ошибку. Скорее всего это связано с самим molecule test т.к. он при проверки ругался
-localhost                  : ok=4    changed=1    unreachable=0    failed=1    skipped=4    rescued=0    ignored=0
+
 ```
 ## Необязательная часть
 
