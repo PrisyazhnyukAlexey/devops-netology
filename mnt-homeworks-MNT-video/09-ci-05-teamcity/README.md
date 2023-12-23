@@ -29,7 +29,28 @@
 ``https://github.com/djohnii/devops-netology/blob/main/mnt-homeworks-MNT-video/09-ci-05-teamcity/build``
 
 10. Создайте отдельную ветку `feature/add_reply` в репозитории.
+
+``https://github.com/djohnii/example-teamcity/tree/feature/add_reply``
+
 11. Напишите новый метод для класса Welcomer: метод должен возвращать произвольную реплику, содержащую слово `hunter`.
+
+```
+	public String sayHunter(){
+		return "You're a good little hunter";
+	}
+```
+
+```
+		System.out.println(welcomer.sayHunter());
+```
+
+```
+	@Test
+	public void welcomerSaysHunter(){
+		assertThat(welcomer.sayNerzhul(), containsString("hunter"));
+	}
+```
+
 12. Дополните тест для нового метода на поиск слова `hunter` в новой реплике.
 13. Сделайте push всех изменений в новую ветку репозитория.
 14. Убедитесь, что сборка самостоятельно запустилась, тесты прошли успешно.
