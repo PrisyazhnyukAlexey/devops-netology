@@ -58,9 +58,18 @@
 15. Внесите изменения из произвольной ветки `feature/add_reply` в `master` через `Merge`.
 16. Убедитесь, что нет собранного артефакта в сборке по ветке `master`.
 17. Настройте конфигурацию так, чтобы она собирала `.jar` в артефакты сборки.
+
+![image](https://github.com/djohnii/devops-netology/assets/91311426/5eccb6d7-ad5b-4e8a-8bb6-3be1369feeab)
+
 18. Проведите повторную сборку мастера, убедитесь, что сбора прошла успешно и артефакты собраны.
+![image](https://github.com/djohnii/devops-netology/assets/91311426/4b11fe58-d321-43bd-a961-5b27d3f35b7b)
+
+![image](https://github.com/djohnii/devops-netology/assets/91311426/9dcbf912-e620-4ef8-8b3d-937dce382b83)
+
 19. Проверьте, что конфигурация в репозитории содержит все настройки конфигурации из teamcity.
 20. В ответе пришлите ссылку на репозиторий.
+
+https://github.com/djohnii/example-teamcity/tree/master
 
 ---
 
