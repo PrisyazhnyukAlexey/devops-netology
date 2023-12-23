@@ -40,20 +40,21 @@
 	}
 ```
 
-```
-		System.out.println(welcomer.sayHunter());
-```
 
 ```
 	@Test
-	public void welcomerSaysHunter(){
-		assertThat(welcomer.sayNerzhul(), containsString("hunter"));
+	public void welcomerSaysHunter() {
+		assertThat(welcomer.sayWelcome(), containsString("hunter"));
+		assertThat(welcomer.sayFarewell(), containsString("hunter"));
+		assertThat(welcomer.sayHunter(), containsString("hunter"));
 	}
 ```
 
 12. Дополните тест для нового метода на поиск слова `hunter` в новой реплике.
 13. Сделайте push всех изменений в новую ветку репозитория.
 14. Убедитесь, что сборка самостоятельно запустилась, тесты прошли успешно.
+![image](https://github.com/djohnii/devops-netology/assets/91311426/69bf01ec-fe6e-43bd-8cfe-91af3240d4d5)
+
 15. Внесите изменения из произвольной ветки `feature/add_reply` в `master` через `Merge`.
 16. Убедитесь, что нет собранного артефакта в сборке по ветке `master`.
 17. Настройте конфигурацию так, чтобы она собирала `.jar` в артефакты сборки.
