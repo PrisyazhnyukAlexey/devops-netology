@@ -66,6 +66,9 @@
 
 ![image](https://github.com/djohnii/devops-netology/assets/91311426/9dcbf912-e620-4ef8-8b3d-937dce382b83)
 
+![image](https://github.com/djohnii/devops-netology/assets/91311426/792083e7-eaf8-45f4-867d-f84ac4412c72)
+
+
 19. Проверьте, что конфигурация в репозитории содержит все настройки конфигурации из teamcity.
 20. В ответе пришлите ссылку на репозиторий.
 
