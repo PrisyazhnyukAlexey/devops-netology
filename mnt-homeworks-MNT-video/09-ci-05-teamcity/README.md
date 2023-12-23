@@ -19,12 +19,15 @@
 5. Для deploy будет необходимо загрузить [settings.xml](./teamcity/settings.xml) в набор конфигураций maven у teamcity, предварительно записав туда креды для подключения к nexus.
 6. В pom.xml необходимо поменять ссылки на репозиторий и nexus.
 7. Запустите сборку по master, убедитесь, что всё прошло успешно и артефакт появился в nexus.
+8. 
 ![image](https://github.com/djohnii/devops-netology/assets/91311426/bc04dda0-045c-4077-98f4-e131e34580f8)
 
 ![image](https://github.com/djohnii/devops-netology/assets/91311426/17fb6bf3-1c30-4e22-ae1e-c3f2173c346e)
 
 9. Мигрируйте `build configuration` в репозиторий.
+
 ``https://github.com/djohnii/devops-netology/blob/main/mnt-homeworks-MNT-video/09-ci-05-teamcity/build``
+
 10. Создайте отдельную ветку `feature/add_reply` в репозитории.
 11. Напишите новый метод для класса Welcomer: метод должен возвращать произвольную реплику, содержащую слово `hunter`.
 12. Дополните тест для нового метода на поиск слова `hunter` в новой реплике.
