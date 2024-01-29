@@ -41,9 +41,8 @@
 
 - утилизация CPU для nodeexporter (в процентах, 100-idle);
 
-```
-(avg by (instance) (rate(node_cpu_seconds_total{mode="idle",job="nodeexporter"}[1m])) * 100)
-```
+```(avg by (instance) (rate(node_cpu_seconds_total{mode="idle",job="nodeexporter"}[1m])) * 100)```
+
 - CPULA 1/5/15;
 
   ```
@@ -54,14 +53,11 @@
   
 - количество свободной оперативной памяти;
   
-  ```
- node_memory_MemFree_bytes{job="nodeexporter"} / node_memory_MemTotal_bytes{job="nodeexporter"} * 100
-  ```
+  ``` node_memory_MemFree_bytes{job="nodeexporter"} / node_memory_MemTotal_bytes{job="nodeexporter"} * 100  ```
 
 - количество места на файловой системе.
-  ```
-node_memory_MemFree_bytes / (1024 * 1024)
-  ```
+  
+  ```node_memory_MemFree_bytes / (1024 * 1024)  ```
 
 Для решения этого задания приведите promql-запросы для выдачи этих метрик, а также скриншот получившейся Dashboard.
 
