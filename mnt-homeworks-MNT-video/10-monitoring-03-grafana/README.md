@@ -40,11 +40,31 @@
 Создайте Dashboard и в ней создайте Panels:
 
 - утилизация CPU для nodeexporter (в процентах, 100-idle);
+
+  ```
+(avg by (instance) (rate(node_cpu_seconds_total{mode="idle",job="nodeexporter"}[1m])) * 100)
+  ```
 - CPULA 1/5/15;
+  ```
+
+    node_load1
+    node_load5
+    node_load15
+
+  ```
 - количество свободной оперативной памяти;
+  ```
+ node_memory_MemFree_bytes{job="nodeexporter"} / node_memory_MemTotal_bytes{job="nodeexporter"} * 100
+  ```
 - количество места на файловой системе.
+  ```
+node_memory_MemFree_bytes / (1024 * 1024)
+  ```
 
 Для решения этого задания приведите promql-запросы для выдачи этих метрик, а также скриншот получившейся Dashboard.
+
+![image](https://github.com/djohnii/devops-netology/assets/91311426/efe81bc0-4ea2-4fd6-a4c8-beaa12d9fd64)
+
 
 ## Задание 3
 
