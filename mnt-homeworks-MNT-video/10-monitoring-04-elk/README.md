@@ -44,6 +44,10 @@ Filebeat следует сконфигурировать для отправки
 - docker-compose манифест (если вы не использовали директорию help);
 - ваши yml-конфигурации для стека (если вы не использовали директорию help).
 
+![image](https://github.com/djohnii/devops-netology/assets/91311426/457d2ab2-c6c9-4a12-9bb1-f9193346b62b)
+
+![image](https://github.com/djohnii/devops-netology/assets/91311426/0fe270ef-4715-425e-a210-34cb0e8c71a1)
+
 ## Задание 2
 
 Перейдите в меню [создания index-patterns  в kibana](http://localhost:5601/app/management/kibana/indexPatterns/create) и создайте несколько index-patterns из имеющихся.
@@ -54,6 +58,9 @@ Filebeat следует сконфигурировать для отправки
 Эти логи должны порождать индекс logstash-* в elasticsearch. Если этого индекса нет — воспользуйтесь советами и источниками из раздела «Дополнительные ссылки» этого задания.
  
 ---
+
+![image](https://github.com/djohnii/devops-netology/assets/91311426/a00f2137-71fc-459e-b2d9-a1ea99fc8578)
+
 
 ### Как оформить решение задания
 
