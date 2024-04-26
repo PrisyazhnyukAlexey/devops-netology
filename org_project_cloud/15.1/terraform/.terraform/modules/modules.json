@@ -1,0 +1,1 @@
+{"Modules":[{"Key":"yc-vpc","Source":"git::https://github.com/terraform-yc-modules/terraform-yc-vpc.git","Dir":".terraform/modules/yc-vpc"},{"Key":"","Source":"","Dir":"."}]}

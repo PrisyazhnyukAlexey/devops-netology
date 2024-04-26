@@ -1,0 +1,16 @@
+#cloud-config
+users:
+  - name: alex
+    groups: sudo
+    shell: /bin/bash
+    sudo: 'ALL=(ALL) NOPASSWD:ALL'
+    ssh-authorized-keys:
+      - ssh-rsa 
+write_files:
+- path: /root/.ssh/id_rsa
+  permissions: 0600
+  owner: root:root
+  content: |
+      -----BEGIN RSA PRIVATE KEY-----
+
+
